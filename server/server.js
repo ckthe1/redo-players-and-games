@@ -15,7 +15,7 @@ app.get('/players', (req, res) => {// in floder players
     res.send(players);// 
 });
 
-app.post('/new', (req, res) => {//post same as in client side
+app.post('/players', (req, res) => {//post same as in client side
    // req.body;// data, in client side is body here
     players.push(req.body);// push array in req.body object
     res.sendStatus(201);

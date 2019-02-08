@@ -10,11 +10,12 @@ function onReady(){
 
     }).then(function (response){
          $('playersNameIn').empty();
+            $('.ulPlayers').empty();
         response.forEach(function(players) {
-            $('#playersBody').append(`
-         <ul class= ulPlayers>
+            $('.ulPlayers').append(`
+         
             <li class= playersNameOut>${players.name}</li>
-        </ul>
+        
           `);
         });
         // for (let i = 0; i < response.length; i++) {//response.foreach(wolfObject)=>
@@ -29,9 +30,10 @@ function onReady(){
 function inputPlayers(){
     // let newPlayers = $('#playersNameIn').val();
     // console.log('newplyaers:', newPlayers);
-    let newPlayers = $('#playersNameIn').val()
+    let newPlayers = $('#playersNameIn').val();
+    // $('.ulPlayers').empty();
     $.ajax({//use ajax, send them to the server
-        url:'/new', 
+        url:'/players', 
         method: 'POST',
         data:{
             name: newPlayers, 
@@ -47,10 +49,8 @@ function inputPlayers(){
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i]);
                 let players = response[i];
-                $('#playersBody').append(`
-        <ul class= ulPlayers>
-            <li class= playersNameOut>${players.name}</li>
-        </ul>
+                $('.ulPlayers').append(`  
+            <li class= playersNameOut>${players.name}</li>       
         `);
 
                 $('#dropDownPlayer').append(`
