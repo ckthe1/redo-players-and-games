@@ -3,13 +3,13 @@ $(document).ready(onReady);
 function onReady(){
     console.log('in jQuery');
     $('#addPlayersButton').on('click', inputPlayers)
-
+   
     $.ajax({ // ajax go to server
         url: '/players',
         method: 'GET'//reqst to server
 
     }).then(function (response){
-        // $('.ulPlayers').empty();
+         $('playersNameIn').empty();
         response.forEach(function(players) {
             $('#playersBody').append(`
          <ul class= ulPlayers>
@@ -52,8 +52,13 @@ function inputPlayers(){
             <li class= playersNameOut>${players.name}</li>
         </ul>
         `);
+
+                $('#dropDownPlayer').append(`
+                <option>${players.name}</option>
+                `);
             }
         })// end response function
     })//end ajax
 
 };// end inputPlayers
+

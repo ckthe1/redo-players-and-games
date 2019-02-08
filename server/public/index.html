@@ -11,5 +11,50 @@
     <span> New Player Name </span><input type=" text" class="inputs" id="playersNameIn" placeholder="Players Name"></input>
     <button id="addPlayersButton">Add player</button>
     
+    <h1> Games </h1>
+    <span> Players </span>
+
+    <div id= "selectPlayers">
+    <select id="dropDownPlayer">
+        <option >CKthe1</option>
+        <option >Thunder Julia</option>
+        <option >Maribelle</option>
+        <option >Madison WI</option>
+    </select><span> VS Opponent: </span>
+    <select id="dropDownOpponent">
+        <option>CKthe1</option>
+        <option>Thunder Julia</option>
+        <option>Maribelle</option>
+        <option>Madison WI</option>
+    </select>
+    </div>
+
+    <div id="divScores">    
+        <span>Player Score: </span><input type="number"  id="playerScore" placeholder="Score"></input>
+        <span>Opponent Score: </span><input type="number" id="opponentScore" placeholder="Score"></input>
+    </div>
+    <button id="addGamesButton">Add Games</button>
+
+    <table  >
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Player Score</th>
+                <th> Opponent Name</th>
+                <th>Opponent Score</th>
+                <th>Winner</th>
+            </tr>
+        </thead>
+        <tbody id = "tableBody">
+            <tr>
+                <td id = "name">Ckthe1</td>
+                <td id = "score">21</td>
+                <td id = "oppName">Maribelle</td>
+                <td id = "oppScore">20</td>
+                <td id = "winner">Ckthe1</td>
+            </tr>
+
+        </tbody>
+    </table>
 </body>
 </html>
